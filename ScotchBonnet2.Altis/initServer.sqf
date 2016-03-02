@@ -15,13 +15,6 @@ _respawnEastPos = [_locationPos, 5, 50, 3, 0, 20, 0] call BIS_fnc_findSafePos;
 "respawn_east" setMarkerPos _respawnEastPos;
 
 //Place respawn_west in safe positon
-_respawnWestPos = [_locationPos, 600, 700, 3, 0, 20, 0] call BIS_fnc_findSafePos;
+_respawnWestPos = [_locationPos, 500, 600, 3, 0, 20, 0] call BIS_fnc_findSafePos;
 "respawn_west" setMarkerPos _respawnWestPos;
-
-//Spawn opfor
-{_x setpos (getmarkerpos "respawn_east")} foreach units team2;
 };
-//Spawn civs
-{_x setpos (getmarkerpos "respawn_east")} foreach units team3;
-//Spawn blufor
-{_x setpos (getmarkerpos "respawn_west")} foreach units team1;
