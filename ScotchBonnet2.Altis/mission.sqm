@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=80;
+		nextID=81;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4461.9512,42.697189,12681.9};
-		dir[]={0.49459949,-0.36261457,-0.7898742};
-		up[]={0.19245598,0.93192989,-0.30735257};
-		aside[]={-0.84755909,-8.1141479e-008,-0.53072017};
+		pos[]={4193.9351,24.480854,12799.894};
+		dir[]={0.92784512,-0.22804977,-0.29518944};
+		up[]={0.21733944,0.97364503,-0.06914565};
+		aside[]={-0.3031767,1.1790835e-006,-0.95295686};
 	};
 };
 binarizationWanted=0;
@@ -56,6 +56,25 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute1
+		{
 			property="RespawnTemplates";
 			expression="true";
 			class Value
@@ -87,25 +106,6 @@ class CustomAttributes
 							};
 						};
 					};
-				};
-			};
-		};
-		class Attribute1
-		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=1;
 				};
 			};
 		};
@@ -161,7 +161,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=17;
+		items=18;
 		class Item0
 		{
 			dataType="Group";
@@ -1260,6 +1260,20 @@ class Mission
 							{
 								typeName="U_NikosAgedBody";
 								isBackpack=0;
+								class ItemCargo
+								{
+									items=2;
+									class Item0
+									{
+										name="ACE_EarPlugs";
+										count=1;
+									};
+									class Item1
+									{
+										name="ACE_Cellphone";
+										count=1;
+									};
+								};
 							};
 							compass="ItemCompass";
 							watch="ItemWatch";
@@ -1288,6 +1302,25 @@ class Mission
 							{
 								typeName="U_Marshal";
 								isBackpack=0;
+								class ItemCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="ACE_Banana";
+										count=1;
+									};
+									class Item1
+									{
+										name="ACE_EarPlugs";
+										count=1;
+									};
+									class Item2
+									{
+										name="ACE_Cellphone";
+										count=1;
+									};
+								};
 							};
 							class vest
 							{
@@ -1322,6 +1355,20 @@ class Mission
 							{
 								typeName="U_C_Journalist";
 								isBackpack=0;
+								class ItemCargo
+								{
+									items=2;
+									class Item0
+									{
+										name="ACE_Cellphone";
+										count=1;
+									};
+									class Item1
+									{
+										name="ACE_EarPlugs";
+										count=1;
+									};
+								};
 							};
 							class vest
 							{
@@ -1357,6 +1404,15 @@ class Mission
 							{
 								typeName="U_C_HunterBody_grn";
 								isBackpack=0;
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="ACE_EarPlugs";
+										count=1;
+									};
+								};
 							};
 							map="ItemMap";
 							compass="ItemCompass";
@@ -2802,6 +2858,21 @@ class Mission
 			};
 			id=76;
 			type="B_Boat_Transport_01_F";
+		};
+		class Item17
+		{
+			dataType="Trigger";
+			position[]={2673.884,-32.229946,13031.285};
+			class Attributes
+			{
+				name="timer";
+				condition="time > 600";
+				onActivation="[""end4"",false] call BIS_fnc_endMission;";
+				sizeA=0;
+				sizeB=0;
+			};
+			id=80;
+			type="EmptyDetector";
 		};
 	};
 };

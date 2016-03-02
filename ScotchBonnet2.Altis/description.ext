@@ -6,7 +6,7 @@ loadScreen                  = "sos\textures\sos.paa";
 overviewPicture             = "sos\textures\sos.paa";
 author                      = "[S.O.S. Major] Activity";
 
-respawnButton = 1;
+respawnButton = 0;
 respawn = 3;
 respawnDelay = 500000;
 respawnOnStart = 0;
@@ -54,6 +54,15 @@ class CfgDebriefing
         subtitle = "";
         description = "All infidels are eliminated";
         pictureBackground = "sos\textures\opforwin.paa";
+        picture = "";
+        pictureColor[] = {0.0,0.3,0.6,1};
+    };
+    class End4
+    {
+        title = "Terrorists Win";
+        subtitle = "";
+        description = "Counter-Terrorists ran out of time.";
+        pictureBackground = "sos\textures\phildies.paa";
         picture = "";
         pictureColor[] = {0.0,0.3,0.6,1};
     };
