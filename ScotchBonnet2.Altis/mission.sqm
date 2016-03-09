@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=81;
+		nextID=83;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4193.9351,24.480854,12799.894};
-		dir[]={0.92784512,-0.22804977,-0.29518944};
-		up[]={0.21733944,0.97364503,-0.06914565};
-		aside[]={-0.3031767,1.1790835e-006,-0.95295686};
+		pos[]={4192.8877,25.123503,12805.112};
+		dir[]={-0.049894538,-0.29680017,-0.95364696};
+		up[]={-0.01550786,0.95493567,-0.29640153};
+		aside[]={-0.99864709,-9.0105459e-008,0.052248131};
 	};
 };
 binarizationWanted=0;
@@ -90,8 +90,22 @@ class CustomAttributes
 					};
 					class value
 					{
-						items=1;
+						items=2;
 						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="EndMission";
+							};
+						};
+						class Item1
 						{
 							class data
 							{
@@ -161,7 +175,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=18;
+		items=20;
 		class Item0
 		{
 			dataType="Group";
@@ -393,6 +407,7 @@ class Mission
 					{
 						skill=0.44999999;
 						rank="CORPORAL";
+						init="team1=group this;";
 						description="Grenadier";
 						isPlayable=1;
 						class Inventory
@@ -553,6 +568,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.40000001;
+						init="team1=group this;";
 						description="Rifleman";
 						isPlayable=1;
 						class Inventory
@@ -686,6 +702,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
+						init="team1=group this;";
 						description="UAV Operator";
 						isPlayable=1;
 						class Inventory
@@ -808,6 +825,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
+						init="team1=group this;";
 						description="Medic";
 						isPlayable=1;
 						class Inventory
@@ -982,6 +1000,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
+						init="team1=group this;";
 						description="Sharpshooter";
 						isPlayable=1;
 						class Inventory
@@ -1189,7 +1208,7 @@ class Mission
 				onActivation="[""end1"",false] call BIS_fnc_endMission;";
 				sizeA=0;
 				sizeB=0;
-				timeout[]={3,3,3};
+				timeout[]={2,2,2};
 				interuptable=1;
 				activationBy="CIV";
 			};
@@ -1199,14 +1218,14 @@ class Mission
 		class Item2
 		{
 			dataType="Trigger";
-			position[]={2676.042,-5.0425415,12862.475};
+			position[]={2673.6191,-5.0665116,12865.735};
 			class Attributes
 			{
 				condition="!isNull team1 && ({alive _x} count units team1) < 1;";
 				onActivation="[""end3"",false] call BIS_fnc_endMission;";
 				sizeA=0;
 				sizeB=0;
-				timeout[]={3,3,3};
+				timeout[]={2,2,2};
 				interuptable=1;
 				activationBy="WEST";
 			};
@@ -1223,7 +1242,7 @@ class Mission
 				onActivation="""end2"" call BIS_fnc_endMission;";
 				sizeA=0;
 				sizeB=0;
-				timeout[]={5,5,5};
+				timeout[]={2,2,2};
 				interuptable=1;
 				activationBy="EAST";
 			};
@@ -1242,7 +1261,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4202.1279,21.803272,12801.014};
+						position[]={4202.1279,21.803265,12801.014};
 						angles[]={0,4.0795851,0};
 					};
 					side="Civilian";
@@ -1281,6 +1300,48 @@ class Mission
 					};
 					id=25;
 					type="C_Nikos_aged";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item1
 				{
@@ -1294,6 +1355,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
+						init="team3=group this";
 						description="Bodyguard";
 						isPlayable=1;
 						class Inventory
@@ -1347,6 +1409,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
+						init="team3=group this";
 						description="Journalist";
 						isPlayable=1;
 						class Inventory
@@ -1396,6 +1459,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
+						init="team3=group this";
 						description="Bum";
 						isPlayable=1;
 						class Inventory
@@ -1421,6 +1485,48 @@ class Mission
 					};
 					id=67;
 					type="C_man_p_beggar_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 			};
 			class Attributes
@@ -1891,7 +1997,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4192.168,21.652256,12796.953};
+						position[]={4192.168,21.652258,12796.953};
 					};
 					side="East";
 					flags=3;
@@ -1925,7 +2031,7 @@ class Mission
 							};
 							class uniform
 							{
-								typeName="U_BG_Guerrilla_6_1";
+								typeName="U_BG_Guerilla2_3";
 								isBackpack=0;
 								class ItemCargo
 								{
@@ -1948,7 +2054,7 @@ class Mission
 									class Item3
 									{
 										name="ACE_morphine";
-										count=10;
+										count=5;
 									};
 								};
 							};
@@ -2001,7 +2107,7 @@ class Mission
 							compass="ItemCompass";
 							watch="ItemWatch";
 							radio="ItemRadio";
-							headgear="H_Booniehat_oli";
+							headgear="H_Hat_tan";
 						};
 					};
 					id=55;
@@ -2009,6 +2115,25 @@ class Mission
 					class CustomAttributes
 					{
 						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
 						{
 							property="pitch";
 							expression="_this setpitch _value;";
@@ -2027,7 +2152,26 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 				class Item1
@@ -2035,12 +2179,13 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4190.1821,21.704891,12795.069};
+						position[]={4190.1821,21.704874,12795.069};
 					};
 					side="East";
 					flags=1;
 					class Attributes
 					{
+						init="team2=group this;";
 						description="Gunner";
 						isPlayable=1;
 						class Inventory
@@ -2137,18 +2282,61 @@ class Mission
 					};
 					id=31;
 					type="O_Soldier_AR_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item2
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4188.6509,21.77702,12793.454};
+						position[]={4188.6509,21.77701,12793.454};
 					};
 					side="East";
 					flags=1;
 					class Attributes
 					{
+						init="team2=group this;";
 						description="Gunner's Mate";
 						isPlayable=1;
 						class Inventory
@@ -2178,7 +2366,7 @@ class Mission
 							};
 							class uniform
 							{
-								typeName="U_BG_Guerilla2_3";
+								typeName="U_Competitor";
 								isBackpack=0;
 								class ItemCargo
 								{
@@ -2253,18 +2441,61 @@ class Mission
 					};
 					id=32;
 					type="O_Soldier_AAR_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item3
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4193.415,21.626858,12794.915};
+						position[]={4193.415,21.626854,12794.915};
 					};
 					side="East";
 					flags=1;
 					class Attributes
 					{
+						init="team2=group this;";
 						description="Grenadier";
 						isPlayable=1;
 						class Inventory
@@ -2393,18 +2624,61 @@ class Mission
 					};
 					id=33;
 					type="O_Soldier_GL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item4
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4191.5859,21.673412,12793.261};
+						position[]={4191.5859,21.673403,12793.261};
 					};
 					side="East";
 					flags=1;
 					class Attributes
 					{
+						init="team2=group this;";
 						description="Medic";
 						isPlayable=1;
 						class Inventory
@@ -2546,18 +2820,61 @@ class Mission
 					};
 					id=34;
 					type="O_medic_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item5
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4189.8882,21.749065,12791.899};
+						position[]={4189.8882,21.749048,12791.899};
 					};
 					side="East";
 					flags=1;
 					class Attributes
 					{
+						init="team2=group this;";
 						description="Sharpshooter";
 						isPlayable=1;
 						class Inventory
@@ -2688,6 +3005,48 @@ class Mission
 					};
 					id=35;
 					type="O_soldier_M_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 			};
 			class Attributes
@@ -2862,17 +3221,47 @@ class Mission
 		class Item17
 		{
 			dataType="Trigger";
-			position[]={2673.884,-32.229946,13031.285};
+			position[]={2672.908,-32.101631,13031.706};
 			class Attributes
 			{
 				name="timer";
-				condition="time > 600";
+				condition="ELAPSED_TIME > END_TIME";
 				onActivation="[""end4"",false] call BIS_fnc_endMission;";
 				sizeA=0;
 				sizeB=0;
 			};
 			id=80;
 			type="EmptyDetector";
+		};
+		class Item18
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={13981.127,0.86415052,6645.1426};
+				angles[]={0,1.6523147,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=81;
+			type="B_Boat_Transport_01_F";
+		};
+		class Item19
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={13845.479,0.82492787,6215.606};
+				angles[]={0,1.6523147,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=82;
+			type="B_Boat_Transport_01_F";
 		};
 	};
 };

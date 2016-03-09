@@ -8,9 +8,9 @@ author                      = "[S.O.S. Major] Activity";
 
 respawnButton = 0;
 respawn = 3;
-respawnDelay = 500000;
+respawnDelay = 10;
 respawnOnStart = 0;
-disabledAI = 1;
+disabledAI = 0;
 
 class Header {
     gameType                = TDM;
