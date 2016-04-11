@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4192.8877,25.123503,12805.112};
-		dir[]={-0.049894538,-0.29680017,-0.95364696};
-		up[]={-0.01550786,0.95493567,-0.29640153};
-		aside[]={-0.99864709,-9.0105459e-008,0.052248131};
+		pos[]={4473.2217,115.93704,12618.57};
+		dir[]={-0.32244238,-0.88835782,0.32691619};
+		up[]={-0.62381864,0.45915902,0.63247418};
+		aside[]={0.71196902,-9.5771975e-007,0.70222718};
 	};
 };
 binarizationWanted=0;
@@ -791,7 +791,7 @@ class Mission
 							compass="ItemCompass";
 							watch="ItemWatch";
 							radio="tf_anprc152";
-							gps="ItemGPS";
+							gps="B_UavTerminal";
 							goggles="rhs_googles_orange";
 							hmd="NVGoggles";
 							headgear="H_HelmetB";
@@ -1850,7 +1850,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="123";
+							value="1234";
 						};
 					};
 				};
@@ -2330,7 +2330,6 @@ class Mission
 							class primaryWeapon
 							{
 								name="rhs_weap_akms";
-								flashlight="rhs_acc_2dpZenit";
 								class primaryMuzzleMag
 								{
 									name="rhs_30Rnd_762x39mm";
@@ -2672,7 +2671,6 @@ class Mission
 							class primaryWeapon
 							{
 								name="rhs_weap_akms";
-								flashlight="rhs_acc_2dpZenit";
 								class primaryMuzzleMag
 								{
 									name="rhs_30Rnd_762x39mm";
@@ -3074,7 +3072,7 @@ class Mission
 		class Item9
 		{
 			dataType="Marker";
-			position[]={2780.53,-22.822655,12761.957};
+			position[]={2779.1941,-15.291626,12690.875};
 			name="respawn_west";
 			type="b_unknown";
 			alpha=0;

@@ -2,7 +2,7 @@ if (isServer) then {
     [] call SOS_fnc_setTime;
     [] call SOS_fnc_setWeather;
 };
-END_TIME = 720; //When mission should end in seconds.
+END_TIME = 900; //When mission should end in seconds.
 
 if (isServer) then {
 

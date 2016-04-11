@@ -15,6 +15,6 @@ _respawnEastPos = [_locationPos, 5, 50, 3, 0, 20, 0] call BIS_fnc_findSafePos;
 "respawn_east" setMarkerPos _respawnEastPos;
 
 //Place respawn_west in safe positon
-_respawnWestPos = [_locationPos, 500, 600, 3, 0, 20, 0] call BIS_fnc_findSafePos;
+_respawnWestPos = [_locationPos, 400, 500, 3, 0, 20, 0] call BIS_fnc_findSafePos;
 "respawn_west" setMarkerPos _respawnWestPos;
 };
