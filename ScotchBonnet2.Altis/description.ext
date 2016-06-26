@@ -1,4 +1,4 @@
-onLoadName                  = "Scotch Bonnet 2";
+onLoadName                  = "PVP Hostage Rescue";
 onLoadMission               = "Visit http://sos-tactical-gaming.shivtr.com for more information.";
 onLoadMissionTime           = 1;
 onLoadIntroTime             = 0;
@@ -7,8 +7,8 @@ overviewPicture             = "sos\textures\sos.paa";
 author                      = "[S.O.S. Major] Activity";
 
 respawnButton = 0;
-respawn = 3;
-respawnDelay = 100000;
+respawn = 0;
+respawnDelay = 2;
 respawnOnStart = 0;
 disabledAI = 1;
 
