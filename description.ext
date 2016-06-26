@@ -1,0 +1,69 @@
+onLoadName                  = "PVP Hostage Rescue";
+onLoadMission               = "Visit http://sos-tactical-gaming.shivtr.com for more information.";
+onLoadMissionTime           = 1;
+onLoadIntroTime             = 0;
+loadScreen                  = "sos\textures\sos.paa";
+overviewPicture             = "sos\textures\sos.paa";
+author                      = "[S.O.S. Major] Activity";
+
+respawnButton = 0;
+respawn = 0;
+respawnDelay = 2;
+respawnOnStart = 0;
+disabledAI = 1;
+
+class Header {
+    gameType                = TDM;
+    minPlayers              = 1;
+    maxPlayers              = 16;
+    playerCountMultipleOf   = 1;
+};
+
+class CfgFunctions {
+    #include "sos\CfgFunctions.hpp"
+};
+
+class Params {
+    #include "sos\environment\SOS_TimeParams.hpp"
+    #include "sos\environment\SOS_WeatherParams.hpp"
+};
+
+class CfgDebriefing
+{  
+    class End1
+    {
+        title = "Doctor Phil Died";
+        subtitle = "";
+        description = "Doctor Phil was killed in a horrific accident.";
+        pictureBackground = "sos\textures\phildies.paa";
+        picture = "";
+        pictureColor[] = {0.0,0.3,0.6,1};
+    };
+    class End2
+    {
+        title = "Counter-Terrorists Win";
+        subtitle = "";
+        description = "All Terrorists are eliminated.";
+        pictureBackground = "sos\textures\bluforwin.paa";
+        picture = "";
+        pictureColor[] = {0.0,0.3,0.6,1};
+    };
+    class End3
+    {
+        title = "Terrorists Win";
+        subtitle = "";
+        description = "All infidels are eliminated";
+        pictureBackground = "sos\textures\opforwin.paa";
+        picture = "";
+        pictureColor[] = {0.0,0.3,0.6,1};
+    };
+    class End4
+    {
+        title = "Terrorists Win";
+        subtitle = "";
+        description = "Counter-Terrorists ran out of time.";
+        pictureBackground = "sos\textures\phildies.paa";
+        picture = "";
+        pictureColor[] = {0.0,0.3,0.6,1};
+    };
+};
